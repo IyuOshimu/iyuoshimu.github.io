@@ -2,173 +2,173 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://iyumashiro.github.io/</loc>
+    <loc>https://iyuoshimu.github.io/</loc>
     <lastmod>2025-02-04T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://iyumashiro.github.io/en/"
+                href="https://iyuoshimu.github.io/en/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://iyumashiro.github.io/"
+                href="https://iyuoshimu.github.io/"
                 />
   </url><url>
-    <loc>https://iyumashiro.github.io/categories/</loc>
+    <loc>https://iyuoshimu.github.io/categories/</loc>
     <lastmod>2025-02-04T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://iyumashiro.github.io/en/categories/"
+                href="https://iyuoshimu.github.io/en/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://iyumashiro.github.io/categories/"
+                href="https://iyuoshimu.github.io/categories/"
                 />
   </url><url>
-    <loc>https://iyumashiro.github.io/tags/cmake/</loc>
+    <loc>https://iyuoshimu.github.io/tags/cmake/</loc>
     <lastmod>2025-02-04T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://iyumashiro.github.io/en/tags/cmake/"
+                href="https://iyuoshimu.github.io/en/tags/cmake/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://iyumashiro.github.io/tags/cmake/"
+                href="https://iyuoshimu.github.io/tags/cmake/"
                 />
   </url><url>
-    <loc>https://iyumashiro.github.io/categories/cmake/</loc>
+    <loc>https://iyuoshimu.github.io/categories/cmake/</loc>
     <lastmod>2025-02-04T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://iyumashiro.github.io/en/categories/cmake/"
+                href="https://iyuoshimu.github.io/en/categories/cmake/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://iyumashiro.github.io/categories/cmake/"
+                href="https://iyuoshimu.github.io/categories/cmake/"
                 />
   </url><url>
-    <loc>https://iyumashiro.github.io/post/</loc>
+    <loc>https://iyuoshimu.github.io/post/</loc>
     <lastmod>2025-02-04T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://iyumashiro.github.io/en/post/"
+                href="https://iyuoshimu.github.io/en/post/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://iyumashiro.github.io/post/"
+                href="https://iyuoshimu.github.io/post/"
                 />
   </url><url>
-    <loc>https://iyumashiro.github.io/tags/raylib/</loc>
+    <loc>https://iyuoshimu.github.io/tags/raylib/</loc>
     <lastmod>2025-02-04T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://iyumashiro.github.io/en/tags/raylib/"
+                href="https://iyuoshimu.github.io/en/tags/raylib/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://iyumashiro.github.io/tags/raylib/"
+                href="https://iyuoshimu.github.io/tags/raylib/"
                 />
   </url><url>
-    <loc>https://iyumashiro.github.io/categories/raylib/</loc>
+    <loc>https://iyuoshimu.github.io/categories/raylib/</loc>
     <lastmod>2025-02-04T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://iyumashiro.github.io/en/categories/raylib/"
+                href="https://iyuoshimu.github.io/en/categories/raylib/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://iyumashiro.github.io/categories/raylib/"
+                href="https://iyuoshimu.github.io/categories/raylib/"
                 />
   </url><url>
-    <loc>https://iyumashiro.github.io/tags/</loc>
+    <loc>https://iyuoshimu.github.io/tags/</loc>
     <lastmod>2025-02-04T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://iyumashiro.github.io/en/tags/"
+                href="https://iyuoshimu.github.io/en/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://iyumashiro.github.io/tags/"
+                href="https://iyuoshimu.github.io/tags/"
                 />
   </url><url>
-    <loc>https://iyumashiro.github.io/p/cmake/</loc>
+    <loc>https://iyuoshimu.github.io/p/cmake/</loc>
     <lastmod>2025-02-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iyumashiro.github.io/page/</loc>
+    <loc>https://iyuoshimu.github.io/page/</loc>
     <lastmod>2020-05-20T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://iyumashiro.github.io/en/page/"
+                href="https://iyuoshimu.github.io/en/page/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://iyumashiro.github.io/page/"
+                href="https://iyuoshimu.github.io/page/"
                 />
   </url><url>
-    <loc>https://iyumashiro.github.io/archives/</loc>
+    <loc>https://iyuoshimu.github.io/archives/</loc>
     <lastmod>2020-05-20T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://iyumashiro.github.io/en/archives/"
+                href="https://iyuoshimu.github.io/en/archives/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://iyumashiro.github.io/archives/"
+                href="https://iyuoshimu.github.io/archives/"
                 />
   </url><url>
-    <loc>https://iyumashiro.github.io/%E5%85%B3%E4%BA%8E/</loc>
+    <loc>https://iyuoshimu.github.io/%E5%85%B3%E4%BA%8E/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://iyumashiro.github.io/en/about/"
+                href="https://iyuoshimu.github.io/en/about/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://iyumashiro.github.io/%E5%85%B3%E4%BA%8E/"
+                href="https://iyuoshimu.github.io/%E5%85%B3%E4%BA%8E/"
                 />
   </url><url>
-    <loc>https://iyumashiro.github.io/search/</loc>
+    <loc>https://iyuoshimu.github.io/search/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://iyumashiro.github.io/en/search/"
+                href="https://iyuoshimu.github.io/en/search/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://iyumashiro.github.io/search/"
+                href="https://iyuoshimu.github.io/search/"
                 />
   </url><url>
-    <loc>https://iyumashiro.github.io/%E7%9B%B8%E5%85%B3/</loc>
+    <loc>https://iyuoshimu.github.io/%E7%9B%B8%E5%85%B3/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://iyumashiro.github.io/en/links/"
+                href="https://iyuoshimu.github.io/en/links/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://iyumashiro.github.io/%E7%9B%B8%E5%85%B3/"
+                href="https://iyuoshimu.github.io/%E7%9B%B8%E5%85%B3/"
                 />
   </url>
 </urlset>

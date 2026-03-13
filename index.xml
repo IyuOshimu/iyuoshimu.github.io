@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>iyuMashiro之森</title>
-        <link>https://iyumashiro.github.io/</link>
+        <link>https://iyuoshimu.github.io/</link>
         <description>Recent content on iyuMashiro之森</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>iyuMashiro</copyright>
-        <lastBuildDate>Tue, 04 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://iyumashiro.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 04 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://iyuoshimu.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>使用 cmake 构造 raylib</title>
-        <link>https://iyumashiro.github.io/p/cmake/</link>
+        <link>https://iyuoshimu.github.io/p/cmake/</link>
         <pubDate>Tue, 04 Feb 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://iyumashiro.github.io/p/cmake/</guid>
-        <description>&lt;img src="https://iyumashiro.github.io/img/kano.png" alt="Featured image of post 使用 cmake 构造 raylib" /&gt;&lt;h2 id=&#34;raylib-概述&#34;&gt;
+        <guid>https://iyuoshimu.github.io/p/cmake/</guid>
+        <description>&lt;img src="https://iyuoshimu.github.io/img/kano.png" alt="Featured image of post 使用 cmake 构造 raylib" /&gt;&lt;h2 id=&#34;raylib-概述&#34;&gt;
     &lt;a href=&#34;#raylib-%e6%a6%82%e8%bf%b0&#34;&gt;#&lt;/a&gt;
     raylib 概述
 &lt;/h2&gt;&lt;p&gt;raylib 是一个简单易用的库，是我们可以较为简单的享受游戏编程。除此之为 raylib 的作者还提供其他的扩展组件。 &lt;a class=&#34;link&#34; href=&#34;https://www.raylib.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -371,35 +371,35 @@ windows 下的指令为 gcc -v&lt;/p&gt;
         </item>
         <item>
         <title>归档</title>
-        <link>https://iyumashiro.github.io/archives/</link>
+        <link>https://iyuoshimu.github.io/archives/</link>
         <pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
         
-        <guid>https://iyumashiro.github.io/archives/</guid>
+        <guid>https://iyuoshimu.github.io/archives/</guid>
         <description></description>
         </item>
         <item>
         <title>关于</title>
-        <link>https://iyumashiro.github.io/%E5%85%B3%E4%BA%8E/</link>
+        <link>https://iyuoshimu.github.io/%E5%85%B3%E4%BA%8E/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://iyumashiro.github.io/%E5%85%B3%E4%BA%8E/</guid>
+        <guid>https://iyuoshimu.github.io/%E5%85%B3%E4%BA%8E/</guid>
         <description>&lt;p&gt;iyuMashiro之森记录iyu的点点滴滴&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>搜索</title>
-        <link>https://iyumashiro.github.io/search/</link>
+        <link>https://iyuoshimu.github.io/search/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://iyumashiro.github.io/search/</guid>
+        <guid>https://iyuoshimu.github.io/search/</guid>
         <description></description>
         </item>
         <item>
         <title>相关</title>
-        <link>https://iyumashiro.github.io/%E7%9B%B8%E5%85%B3/</link>
+        <link>https://iyuoshimu.github.io/%E7%9B%B8%E5%85%B3/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://iyumashiro.github.io/%E7%9B%B8%E5%85%B3/</guid>
+        <guid>https://iyuoshimu.github.io/%E7%9B%B8%E5%85%B3/</guid>
         <description>&lt;p&gt;你可以通过以下渠道获取其它内容&lt;/p&gt;
 </description>
         </item>

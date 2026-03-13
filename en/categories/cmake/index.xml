@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Cmake on iyuMashiro&#39;s forest</title>
-        <link>https://iyumashiro.github.io/en/categories/cmake/</link>
+        <link>https://iyuoshimu.github.io/en/categories/cmake/</link>
         <description>Recent content in Cmake on iyuMashiro&#39;s forest</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <copyright>iyuMashiro</copyright>
-        <lastBuildDate>Tue, 04 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://iyumashiro.github.io/en/categories/cmake/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 04 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://iyuoshimu.github.io/en/categories/cmake/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>useCmakeBuildRaylib</title>
-        <link>https://iyumashiro.github.io/en/p/cmake/</link>
+        <link>https://iyuoshimu.github.io/en/p/cmake/</link>
         <pubDate>Tue, 04 Feb 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://iyumashiro.github.io/en/p/cmake/</guid>
-        <description>&lt;img src="https://iyumashiro.github.io/img/kano.png" alt="Featured image of post useCmakeBuildRaylib" /&gt;&lt;h2 id=&#34;raylib-overview&#34;&gt;
+        <guid>https://iyuoshimu.github.io/en/p/cmake/</guid>
+        <description>&lt;img src="https://iyuoshimu.github.io/img/kano.png" alt="Featured image of post useCmakeBuildRaylib" /&gt;&lt;h2 id=&#34;raylib-overview&#34;&gt;
     &lt;a href=&#34;#raylib-overview&#34;&gt;#&lt;/a&gt;
     raylib overview
 &lt;/h2&gt;&lt;p&gt;raylib is a simple and easy-to-use library that allows us to enjoy game programming with ease. In addition to raylib itself, the author also provides other extension components. The official website of raylib is &lt;a class=&#34;link&#34; href=&#34;https://www.raylib.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
