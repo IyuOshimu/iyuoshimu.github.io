@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Cmake on iyuMashiro之森</title>
+        <title>Cmake on 雾锁之森</title>
         <link>https://iyuoshimu.github.io/categories/cmake/</link>
-        <description>Recent content in Cmake on iyuMashiro之森</description>
+        <description>Recent content in Cmake on 雾锁之森</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>iyuMashiro</copyright>
+        <copyright>iyuOshimu</copyright>
         <lastBuildDate>Tue, 04 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://iyuoshimu.github.io/categories/cmake/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>使用 cmake 构造 raylib</title>
         <link>https://iyuoshimu.github.io/p/cmake/</link>

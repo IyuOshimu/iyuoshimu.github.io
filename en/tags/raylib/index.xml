@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Raylib on iyuMashiro&#39;s forest</title>
+        <title>Raylib on The Mist-Shrouded Forest</title>
         <link>https://iyuoshimu.github.io/en/tags/raylib/</link>
-        <description>Recent content in Raylib on iyuMashiro&#39;s forest</description>
+        <description>Recent content in Raylib on The Mist-Shrouded Forest</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
-        <copyright>iyuMashiro</copyright>
+        <copyright>iyuOshimu</copyright>
         <lastBuildDate>Tue, 04 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://iyuoshimu.github.io/en/tags/raylib/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>useCmakeBuildRaylib</title>
         <link>https://iyuoshimu.github.io/en/p/cmake/</link>
