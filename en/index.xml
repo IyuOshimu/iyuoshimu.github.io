@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home on The Mist-Shrouded Forest</title><link>https://iyublog.top/en/</link><description>Recent content in Home on The Mist-Shrouded Forest</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>iyuOshimu</copyright><atom:link href="https://iyublog.top/en/index.xml" rel="self" type="application/rss+xml"/><item><title>useCmakeBuildRaylib</title><link>https://iyublog.top/en/p/cmake/</link><pubDate>Tue, 04 Feb 2025 00:00:00 +0000</pubDate><guid>https://iyublog.top/en/p/cmake/</guid><description>&lt;img src="https://iyublog.top/" alt="Featured image of post useCmakeBuildRaylib" /&gt;&lt;h2 id="raylib-overview"&gt;&lt;a href="#raylib-overview" class="header-anchor"&gt;&lt;/a&gt;raylib overview
+&lt;/h2&gt;&lt;p&gt;raylib is a simple and easy-to-use library that allows us to enjoy game programming with ease. In addition to raylib itself, the author also provides other extension components. The official website of raylib is &lt;a class="link" href="https://www.raylib.com/" target="_blank" rel="noopener"
+ &gt;https://www.raylib.com/&lt;/a&gt;, where you can find more detailed information.&lt;/p&gt;
+&lt;h2 id="purpose-of-this-blog"&gt;&lt;a href="#purpose-of-this-blog" class="header-anchor"&gt;&lt;/a&gt;Purpose of This Blog
+&lt;/h2&gt;&lt;p&gt;The author came across this lib by chance. After some hands-on experience, an idea emerged: could the modules provided by the raylib author be integrated with raylib using CMake? After a period of research, a basic integration was successfully achieved. This blog will document the integration process and the issues encountered along the way.&lt;/p&gt;
+&lt;h2 id="begin"&gt;&lt;a href="#begin" class="header-anchor"&gt;&lt;/a&gt;begin
+&lt;/h2&gt;&lt;h3 id="environment-variables"&gt;&lt;a href="#environment-variables" class="header-anchor"&gt;&lt;/a&gt;environment variables
+&lt;/h3&gt;&lt;p&gt;1.cmake &lt;a class="link" href="https://cmake.org/" target="_blank" rel="noopener"
+ &gt;https://cmake.org/&lt;/a&gt; Just download the latest version&lt;/p&gt;
+&lt;p&gt;2.mingw &lt;a class="link" href="https://github.com/niXman/mingw-builds-binaries/releases" target="_blank" rel="noopener"
+ &gt;https://github.com/niXman/mingw-builds-binaries/releases&lt;/a&gt; &lt;/br&gt;
+Choose the appropriate version based on your operating system. Of course, you can also opt for other build tools.For Windows users, it is recommended to select the posix-seh-ucrt-rt version. Please research the differences between other versions as needed.If you download the build tools from other sources, make sure to check whether the GCC version is outdated. The author previously encountered errors caused by an outdated GCC version, which took quite some time to troubleshoot.
+The command to check the GCC version on Windows is: gcc -v&lt;/p&gt;
+&lt;p&gt;3.Configure environment variables &lt;/br&gt;
+Add the bin paths of CMake and MinGW to your system&amp;rsquo;s environment variables. Please refer to online guides for instructions on how to configure environment variables.&lt;/p&gt;
+&lt;p&gt;4.Additional Operations &lt;/br&gt;
+It is recommended for Windows users to copy mingw32-make.exe and rename it to make.exe. If Visual Studio is not installed on your computer, you may encounter errors due to the absence of compilers like MSVC.&lt;/p&gt;
+&lt;h3 id="file-structure"&gt;&lt;a href="#file-structure" class="header-anchor"&gt;&lt;/a&gt;File structure
+&lt;/h3&gt;&lt;p&gt;Create a project folder, and it is recommended to organize it with the following structure:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;assets // Resource files&lt;/li&gt;
+&lt;li&gt;build // Build directory&lt;/li&gt;
+&lt;li&gt;include // Header files&lt;/li&gt;
+&lt;li&gt;lib // Third-party libraries&lt;/li&gt;
+&lt;li&gt;src // Source files&lt;/li&gt;
+&lt;li&gt;CMakeLists.txt // CMake configuration file&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="writing-the-cmakeliststxt-file"&gt;&lt;a href="#writing-the-cmakeliststxt-file" class="header-anchor"&gt;&lt;/a&gt;Writing the CMakeLists.txt File
+&lt;/h3&gt;&lt;h4 id="top-level-cmakeliststxt"&gt;&lt;a href="#top-level-cmakeliststxt" class="header-anchor"&gt;&lt;/a&gt;Top-Level CMakeLists.txt
+&lt;/h4&gt;&lt;p&gt;This is the main CMakeLists.txt file located in the root directory of your project:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;# Specify the minimum required version of CMake
+cmake_minimum_required(VERSION 3.20)
+
+# Set the project name
+project(sol)
+# Specify the C++ standard
+set(CMAKE_CXX_STANDARD 20)
+
+# Generate compile_commands.json
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+# Add the src directory as a subdirectory
+add_subdirectory(&amp;#34;src&amp;#34;)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The CMake version specified here should not be higher than the version installed on your system.&lt;/p&gt;
+&lt;h4 id="cmakeliststxt-inside-the-src-directory"&gt;&lt;a href="#cmakeliststxt-inside-the-src-directory" class="header-anchor"&gt;&lt;/a&gt;CMakeLists.txt Inside the src Directory
+&lt;/h4&gt;&lt;p&gt;First, create a test .cpp file inside the src folder.
+Then, add the following configuration to src/CMakeLists.txt:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;# Include all source files in the src directory
+aux_source_directory(${PROJECT_SOURCE_DIR}/src SRC)
+
+# Set the output path for the executable
+set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
+
+# Specify the path to header files
+include_directories(${PROJECT_SOURCE_DIR}/include)
+
+
+# Specify the path to third-party libraries
+link_directories(${PROJECT_SOURCE_DIR}/lib)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;${PROJECT_SOURCE_DIR} It refers to the root directory of the project.
+The above configuration defines the set of files to be compiled, the paths to header files and libraries, and sets the output directory for the executable to the bin folder in the project’s root directory (this folder will be automatically created if it doesn’t exist during the build process).&lt;/p&gt;
+&lt;h4 id="raylib-related-configurations"&gt;&lt;a href="#raylib-related-configurations" class="header-anchor"&gt;&lt;/a&gt;raylib Related configurations
+&lt;/h4&gt;&lt;p&gt;Based on the example provided in the official project&amp;rsquo;s CMakeLists.txt, I have made the following integrations and modifications.&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;set(RAYLIB_VERSION 5.5)
+find_package(raylib ${RAYLIB_VERSION} QUIET) # QUIET or REQUIRED
+if (NOT raylib_FOUND) # If there&amp;#39;s none, fetch and build raylib
+ include(FetchContent)
+ FetchContent_Declare(
+ raylib
+ DOWNLOAD_EXTRACT_TIMESTAMP OFF
+ URL https://github.com/raysan5/raylib/archive/refs/tags/${RAYLIB_VERSION}.tar.gz
+ )
+ FetchContent_GetProperties(raylib)
+ if (NOT raylib_POPULATED) # Have we downloaded raylib yet?
+ set(FETCHCONTENT_QUIET NO)
+ FetchContent_MakeAvailable(raylib)
+ set(BUILD_EXAMPLES OFF CACHE BOOL &amp;#34;&amp;#34; FORCE) # don&amp;#39;t build the supplied examples
+ endif()
+endif()
+
+set(RAYGUI_VERSION 4.0)
+find_package(raygui ${RAYGUI_VERSION} QUIET) # QUIET or REQUIRED
+if (NOT raygui_FOUND) # If there&amp;#39;s none, fetch and build raylib
+ include(FetchContent)
+ FetchContent_Declare(
+ raygui
+ DOWNLOAD_EXTRACT_TIMESTAMP OFF
+ URL https://github.com/raysan5/raygui/archive/refs/heads/master.zip
+ )
+ FetchContent_GetProperties(raygui)
+ if (NOT raygui_POPULATED) # Have we downloaded raylib yet?
+ set(FETCHCONTENT_QUIET NO)
+ FetchContent_MakeAvailable(raygui)
+ set(BUILD_RAYGUI_EXAMPLES OFF CACHE BOOL &amp;#34;&amp;#34; FORCE) # don&amp;#39;t build the supplied examples
+ add_subdirectory(${raygui_SOURCE_DIR}/projects/CMake ${raygui_BINARY_DIR})
+ endif()
+endif()
+
+set(RRES_VERSION 1.2.0)
+find_package(rres ${RRES_VERSION} QUIET) # QUIET or REQUIRED
+if (NOT rres_FOUND) # If there&amp;#39;s none, fetch and build raylib
+ include(FetchContent)
+ FetchContent_Declare(
+ rres
+ DOWNLOAD_EXTRACT_TIMESTAMP OFF
+ URL https://github.com/raysan5/rres/archive/refs/heads/master.zip
+ )
+ FetchContent_GetProperties(rres)
+ if (NOT rres_POPULATED) # Have we downloaded raylib yet?
+ set(FETCHCONTENT_QUIET NO)
+ FetchContent_MakeAvailable(rres)
+ set(BUILD_RRES_EXAMPLES OFF CACHE BOOL &amp;#34;&amp;#34; FORCE) # don&amp;#39;t build the supplied examples
+ add_subdirectory(${rres_SOURCE_DIR}/projects/CMake ${rres_BINARY_DIR})
+ endif()
+endif()
+
+option(SUPPORT_FILEFORMAT_WAV &amp;#34;WAV Support&amp;#34; TRUE)
+option(SUPPORT_FILEFORMAT_OGG &amp;#34;OGG Support&amp;#34; TRUE)
+option(SUPPORT_FILEFORMAT_MP3 &amp;#34;MP3 Support&amp;#34; TRUE)
+option(SUPPORT_FILEFORMAT_QOA &amp;#34;QOA Support&amp;#34; TRUE)
+option(SUPPORT_FILEFORMAT_FLAC &amp;#34;FLAC Support&amp;#34; TRUE)
+option(SUPPORT_FILEFORMAT_XM &amp;#34;XM Support&amp;#34; TRUE)
+option(SUPPORT_FILEFORMAT_MOD &amp;#34;MOD Support&amp;#34; TRUE)
+
+file(COPY ${PROJECT_SOURCE_DIR}/include/rres/rres-raylib.h DESTINATION ${rres_SOURCE_DIR}/src)
+
+# Our Project
+add_executable(${PROJECT_NAME} ${SRC})
+#set(raylib_VERBOSE 1)
+target_link_libraries(${PROJECT_NAME} raylib raygui rres)
+
+# Web Configurations
+if (${PLATFORM} STREQUAL &amp;#34;Web&amp;#34;)
+ set_target_properties(${PROJECT_NAME} PROPERTIES SUFFIX &amp;#34;.html&amp;#34;) # Tell Emscripten to build an example.html file.
+ set(CMAKE_EXE_LINKER_FLAGS &amp;#34;${CMAKE_EXE_LINKER_FLAGS} -s USE_GLFW=3 -s ASSERTIONS=1 -s WASM=1 -s ASYNCIFY -s GL_ENABLE_GET_PROC_ADDRESS=1&amp;#34;)
+endif()
+
+# Checks if OSX and links appropriate frameworks (Only required on MacOS)
+if (APPLE)
+ target_link_libraries(${PROJECT_NAME} &amp;#34;-framework IOKit&amp;#34;)
+ target_link_libraries(${PROJECT_NAME} &amp;#34;-framework Cocoa&amp;#34;)
+ target_link_libraries(${PROJECT_NAME} &amp;#34;-framework OpenGL&amp;#34;)
+endif()
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The key part lies in the use of find_package. If the corresponding package is not found, CMake will automatically use the package configured in the code.Since raudio has already been integrated into raylib by the author, you only need to download raylib, raygui, and rres.&lt;/p&gt;
+&lt;h4 id="write-test-code"&gt;&lt;a href="#write-test-code" class="header-anchor"&gt;&lt;/a&gt;Write test code
+&lt;/h4&gt;&lt;p&gt;If you are using C++ code, you will need to make certain modifications to the rres-raylib.h header file; otherwise, compilation errors may occur.
+The changes are as follows&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;//line 567
+crypto_argon2_inputs inputs = {
+.pass = (const uint8_t *)rresGetCipherPassword(), // User password
+.salt = salt, // Salt for the password
+.pass_size = (uint32_t)strlen(rresGetCipherPassword()), // Password length
+.salt_size = 16|
+};
+
+//line 641
+crypto_argon2_inputs inputs = {
+.pass = (const uint8_t *)rresGetCipherPassword(), // User password
+.salt = salt, // Salt for the password
+.pass_size = (uint32_t)strlen(rresGetCipherPassword()), // Password length
+.salt_size = 16|
+};
+
+//line 669
+int decryptResult = crypto_aead_unlock(decryptedData, mac, key, nonce, NULL, 0, (const u8 *)chunk-&amp;gt;data.raw, (chunk-&amp;gt;info.packedSize - 16 - 24 - 16));
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;It could be that the source code is written in c by the author, I&amp;rsquo;ve submitted a pull request in githut. the author has agreed to merge it, and the new version of rres won&amp;rsquo;t have this problem anymore!&lt;/p&gt;
+&lt;h4 id="build"&gt;&lt;a href="#build" class="header-anchor"&gt;&lt;/a&gt;build
+&lt;/h4&gt;&lt;p&gt;Finally, create a build folder in the project’s root directory. Open the command line in the build folder and enter the following commands in sequence:(. / depending on the actual path of your project)&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;cmake ./ 
+cmake --build ./
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;-G “Unix Makefiles” If you are using Windows and need to makefiles, you need to add this statement. The download may fail during runtime due to network effects, just try a few more times. If everything is fine, you should see a bin folder in the root directory with an executable file in it, and if the executable file runs normally, you are done.&lt;/p&gt;
+&lt;h3 id="end"&gt;&lt;a href="#end" class="header-anchor"&gt;&lt;/a&gt;End
+&lt;/h3&gt;&lt;p&gt;If you don&amp;rsquo;t want to go through the trouble, you can download my project directly from github. &lt;a class="link" href="https://github.com/IyuMashiro/raylib_raygui_rres_template" target="_blank" rel="noopener"
+ &gt;https://github.com/IyuMashiro/raylib_raygui_rres_template&lt;/a&gt;&lt;/p&gt;</description></item></channel></rss>

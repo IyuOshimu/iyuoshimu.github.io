@@ -1,0 +1,183 @@
+<!doctype html><html lang=zh-cn dir=ltr><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><meta name=description content="通过 cmake 来构建 raylib 和其相关的组件"><title>使用 cmake 构造 raylib</title><link rel=canonical href=https://iyublog.top/p/cmake/><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=preload as=style href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"><link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"><link rel=stylesheet href=/scss/style.min.8bb164d55d5148dd01d81b742cb78126204692e5f180ab4ecae74ade0a5956e8.css><meta property='og:title' content="使用 cmake 构造 raylib"><meta property='og:description' content="通过 cmake 来构建 raylib 和其相关的组件"><meta property='og:url' content='https://iyublog.top/p/cmake/'><meta property='og:site_name' content='雾锁之森'><meta property='og:type' content='article'><meta property='article:section' content='Post'><meta property='article:tag' content='Cmake'><meta property='article:tag' content='raylib'><meta property='article:published_time' content='2025-02-04T00:00:00+00:00'><meta property='article:modified_time' content='2026-05-03T20:40:01+00:00'><meta property='og:image' content='https://iyublog.top/'><meta name=twitter:title content="使用 cmake 构造 raylib"><meta name=twitter:description content="通过 cmake 来构建 raylib 和其相关的组件"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content='https://iyublog.top/'><link rel="shortcut icon" href=/favicon.ico><link rel=icon href=/favicon.ico sizes=any><link rel="shortcut icon" href=/favicon.ico><link rel=apple-touch-icon href=/favicon.ico><link rel=preconnect href=https://cdn.jsdelivr.net crossorigin><link rel=preconnect href=https://giscus.app crossorigin><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css><script>(function(){document.documentElement.classList.add("stack-first-load")})()</script><script>window.StackEnhancements={basePath:"/",comments:{enabled:!0,giscus:{category:"Announcements",categoryid:"DIC_kwDOLrlWlc4CejmM",darktheme:"dark_dimmed",emitmetadata:0,inputposition:"top",lang:"zh-CN",lighttheme:"light",loading:"lazy",mapping:"pathname",reactionsenabled:1,repo:"IyuOshimu/iyuoshimu.github.io",repoid:"R_kgDOLrlWlQ",strict:0},provider:"giscus"},live2d:{csspath:"https://letere-gzj.github.io/hugo-stack/live2d/waifu.css",dragdirection:["x"],dragenable:!1,enabled:!0,homepath:"/",live2dcorepath:"https://letere-gzj.github.io/hugo-stack/live2d-v3/live2dcubismcore.js",live2dsdkpath:"https://letere-gzj.github.io/hugo-stack/live2d-v3/live2d-sdk.js",minwidth:768,modelpath:"https://letere-gzj.github.io/hugo-stack/live2d-moc3/",switchtype:"order",tipsjsonpath:"https://letere-gzj.github.io/hugo-stack/live2d/my-waifu-tips.json",tipsjspath:"https://letere-gzj.github.io/hugo-stack/live2d-v3/waifu-tips.js",tools:["hitokoto","express","photo","info","quit"]},musicPlayer:{autoplay:!0,enabled:!0,fixed:!0,listfolded:!0,listmaxheight:"240px",loop:"all",mutex:!0,order:"list",preload:"metadata",tracks:[{artist:"鹿乃",cover:"/img/kano-2.jpg",lrc:"",name:"decide",url:"/music/kano-decide.ogg"},{artist:"鹿乃",cover:"/img/kano-3.jpg",lrc:"",name:"glow",url:"/music/kano-glow.ogg"},{artist:"鹿乃",cover:"/img/kano-4.jpg",lrc:"",name:"Stella-rium",url:"/music/kano-stella-rium.ogg"},{artist:"鹿乃",cover:"/img/kano-5.jpg",lrc:"",name:"动物占卜",url:"/music/kano-animal-fortune.ogg"},{artist:"鹿乃",cover:"/img/kano-2.jpg",lrc:"",name:"晚安大家",url:"/music/kano-goodnight-everyone.ogg"},{artist:"鹿乃",cover:"/img/kano-1.jpg",lrc:"",name:"天之弱",url:"/music/kano-amanojaku.ogg"},{artist:"鹿乃",cover:"/img/kano-6.jpg",lrc:"",name:"无心",url:"/music/kano-kokoronashi.ogg"}],volume:.7}}</script></head><body class=article-page><script>(function(){const e="StackColorScheme";localStorage.getItem(e)||localStorage.setItem(e,"auto")})()</script><script>(function(){const t="StackColorScheme",e=localStorage.getItem(t),n=window.matchMedia("(prefers-color-scheme: dark)").matches===!0;e=="dark"||e==="auto"&&n?document.documentElement.dataset.scheme="dark":document.documentElement.dataset.scheme="light"})()</script><div class="container main-container flex on-phone--column extended" data-body-class="
+    article-page"><aside class="sidebar left-sidebar sticky"><button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label=切换菜单>
+<span class=hamburger-box><span class=hamburger-inner></span></span></button><header><figure class=site-avatar><a href=/><img src=/img/kano.png width height class=site-logo loading=lazy alt=Avatar>
+</a><span class=emoji>🍥</span></figure><div class=site-meta><h1 class=site-name><a href=/>雾锁之森</a></h1><h2 class=site-description>星星发光是为了让每一个人有一天都能找到属于自己的星星。</h2></div></header><ol class=menu-social><li><a href=https://github.com/IyuOshimu target=_blank title=GitHub rel=me><svg class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6.0 00-1.3-3.2 4.2 4.2.0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3.0 00-6.2.0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2.0 00-.1 3.2A4.6 4.6.0 004 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a></li><li><a href=https://x.com/Iyu_Oshimu target=_blank title=X rel=me><svg class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M22 4.01c-1 .49-1.98.689-3 .99-1.121-1.265-2.783-1.335-4.38-.737S11.977 6.323 12 8v1c-3.245.083-6.135-1.395-8-4 0 0-4.182 7.433 4 11-1.872 1.247-3.739 2.088-6 2 3.308 1.803 6.913 2.423 10.034 1.517 3.58-1.04 6.522-3.723 7.651-7.742a13.84 13.84.0 00.497-3.753C20.18 7.773 21.692 5.25 22 4.009z"/></svg></a></li></ol><ol class=menu id=main-menu><li><a href=/><svg class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="5 12 3 12 12 3 21 12 19 12"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/><path d="M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6"/></svg>
+<span>主页</span></a></li><li><a href=/%E5%85%B3%E4%BA%8E/><svg class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
+<span>关于</span></a></li><li><a href=/archives/><svg class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
+<span>归档</span></a></li><li><a href=/search/><svg class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg>
+<span>搜索</span></a></li><li><a href=/%E7%9B%B8%E5%85%B3/><svg class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M10 14a3.5 3.5.0 005 0l4-4a3.5 3.5.0 00-5-5l-.5.5"/><path d="M14 10a3.5 3.5.0 00-5 0l-4 4a3.5 3.5.0 005 5l.5-.5"/></svg>
+<span>相关</span></a></li><li class=menu-bottom-section><ol class=menu><li id=i18n-switch><details class=stack-language-switch><summary class=stack-language-switch__summary><svg class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 5h7"/><path d="M9 3v2c0 4.418-2.239 8-5 8"/><path d="M5 9c-.003 2.144 2.952 3.908 6.7 4"/><path d="M12 20l4-9 4 9"/><path d="M19.1 18h-6.2"/></svg>
+<span class=stack-language-switch__label>简体中文
+</span><span class=stack-language-switch__chevron><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6-6 6"/></svg></span></summary><div class=stack-language-switch__menu><a class="stack-language-switch__option is-current" href=/p/cmake/>简体中文
+</a><a class=stack-language-switch__option href=/en/>English</a></div></details></li><li id=dark-mode-toggle><svg class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="8" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
+<svg class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="16" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
+<span>暗色模式</span></li></ol></li></ol></aside><aside class="sidebar right-sidebar sticky"><section class="widget archives stack-toc-widget"><details open><summary class=stack-toc-summary><div class=widget-icon><svg class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/><line x1="11" y1="4" x2="7" y2="20"/><line x1="17" y1="4" x2="13" y2="20"/></svg></div><h2 class="widget-title section-title">目录</h2><span class=stack-toc-chevron><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6-6 6"/></svg></span></summary><div class=widget--toc><nav class=toc-nav id=TableOfContents><ul><li><a href=#raylib-概述>raylib 概述</a></li><li><a href=#本博客的目的>本博客的目的</a></li><li><a href=#开始>开始</a><ul><li><a href=#环境准备>环境准备</a></li><li><a href=#文件结构>文件结构</a></li><li><a href=#编写-cmakeliststxt>编写 CMakeLists.txt</a><ul><li><a href=#外层-cmakeliststxt>外层 CMakeLists.txt</a></li><li><a href=#src-下的-cmakeliststxt>src 下的 CMakeLists.txt</a></li><li><a href=#raylib-相关配置>raylib 相关配置</a></li><li><a href=#编写测试代码>编写测试代码</a></li><li><a href=#build>build</a></li></ul></li><li><a href=#尾>尾</a></li></ul></li></ul></nav></div></details></section></aside><main class="main full-width"><article class="has-image main-article"><header class=article-header><div class=article-image><img alt="Featured image of post 使用 cmake 构造 raylib" loading=lazy sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src=/img/kano.png></div><div class=article-details><header class=article-category><a href=/categories/cmake/ style=background-color:#d8beef;color:#280f3d>Cmake
+</a><a href=/categories/raylib/ style=background-color:#efbee0;color:#3d0f2f>Raylib</a></header><div class=article-title-wrapper><h2 class=article-title><a href=/p/cmake/>使用 cmake 构造 raylib</a></h2><h3 class=article-subtitle>通过 cmake 来构建 raylib 和其相关的组件</h3></div><footer class=article-meta><div class=inline-meta><svg class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
+<time class=article-time--published datetime=2025-02-04T00:00:00Z>Tuesday, February 4, 2025</time>
+<svg class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+<time class=article-time--updated datetime=2026-05-03T20:40:01Z>更新于 Sunday, May 3, 2026</time>
+<svg class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+<time class=article-time--reading>阅读时长: 3 分钟
+</time><span class=article-meta-divider aria-hidden=true>·</span>
+<span class=article-view-count><span class=article-view-count-label>PV</span>
+<span id=vercount_value_page_pv>0</span></span></div></footer></div></header><aside class=article-toc><details><summary><div class=article-toc-title><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6-6 6"/></svg>
+<span>目录</span></div></summary><nav class=toc-nav><ul><li><a href=#raylib-概述>raylib 概述</a></li><li><a href=#本博客的目的>本博客的目的</a></li><li><a href=#开始>开始</a><ul><li><a href=#环境准备>环境准备</a></li><li><a href=#文件结构>文件结构</a></li><li><a href=#编写-cmakeliststxt>编写 CMakeLists.txt</a><ul><li><a href=#外层-cmakeliststxt>外层 CMakeLists.txt</a></li><li><a href=#src-下的-cmakeliststxt>src 下的 CMakeLists.txt</a></li><li><a href=#raylib-相关配置>raylib 相关配置</a></li><li><a href=#编写测试代码>编写测试代码</a></li><li><a href=#build>build</a></li></ul></li><li><a href=#尾>尾</a></li></ul></li></ul></nav></details></aside><section class=article-content><h2 id=raylib-概述><a href=#raylib-%e6%a6%82%e8%bf%b0 class=header-anchor></a>raylib 概述</h2><p>raylib 是一个简单易用的库，是我们可以较为简单的享受游戏编程。除此之为 raylib 的作者还提供其他的扩展组件。 <a class=link href=https://www.raylib.com/ target=_blank rel=noopener>https://www.raylib.com/</a> 是 raylib 的官方网站，可以通过此网站获取更加详细的信息</p><h2 id=本博客的目的><a href=#%e6%9c%ac%e5%8d%9a%e5%ae%a2%e7%9a%84%e7%9b%ae%e7%9a%84 class=header-anchor></a>本博客的目的</h2><p>作者也是在机缘巧合的情况下了解到该库，经过一番体验下来，便突发奇想能否通过cmake 将raylib 作者提供的模块与 raylib 整合到一起，经过一段时间的研究终于完成简易的整合，该博客将记录整合的过程和遇到的问题</p><h2 id=开始><a href=#%e5%bc%80%e5%a7%8b class=header-anchor></a>开始</h2><h3 id=环境准备><a href=#%e7%8e%af%e5%a2%83%e5%87%86%e5%a4%87 class=header-anchor></a>环境准备</h3><p>1.cmake <a class=link href=https://cmake.org/ target=_blank rel=noopener>https://cmake.org/</a> 下载最新版即可</p><p>2.mingw <a class=link href=https://github.com/niXman/mingw-builds-binaries/releases target=_blank rel=noopener>https://github.com/niXman/mingw-builds-binaries/releases</a></br>根据自己的操作系统选择对应的版本，当然你也可以选择其他的构建工具 win用户可选 posix-seh-ucrt-rt 的版本，其他版本的区别请自行查询，如果是从其他渠道下载的构建工具请一定要检查 gcc 的版本是否过低，之前作者就因 gcc 过低导致的报错，排了好一会的错误
+windows 下的指令为 gcc -v</p><p>3.配置环境变量</br>将 cmake 和 mingw 的 bin 路径配置到系统的环境变量中，配置环境的变量的方法请自行查找</p><p>4.额外操作</br>此处建议 windows 用户将 mingw32-make 复制并重命名为 make，如果你的电脑上没有安装过 visual studio 可能会不存在 msvc 等其他编译器导致报错。</p><h3 id=文件结构><a href=#%e6%96%87%e4%bb%b6%e7%bb%93%e6%9e%84 class=header-anchor></a>文件结构</h3><p>创建一个项目文件夹，在此文件夹中建议为如下的结构</p><ul><li>asset 资源文件夹</li><li>build 构建文件夹</li><li>includ 存放头文件</li><li>lib 存放第三方库</li><li>src 存放源文件</li><li>CMakeLists.txt cmake 文件</li></ul><h3 id=编写-cmakeliststxt><a href=#%e7%bc%96%e5%86%99-cmakeliststxt class=header-anchor></a>编写 CMakeLists.txt</h3><h4 id=外层-cmakeliststxt><a href=#%e5%a4%96%e5%b1%82-cmakeliststxt class=header-anchor></a>外层 CMakeLists.txt</h4><p>即文件目录下最外层的 CMakeLists.txt 文件</p><pre tabindex=0><code>#指定 cmake 最低版本
+cmake_minimum_required(VERSION 3.20)
+
+#指定项目名称
+project(sol)
+#指定C++标准
+set(CMAKE_CXX_STANDARD 20)
+
+# Generate compile_commands.json
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+#添加子目录
+add_subdirectory(&#34;src&#34;)
+</code></pre><p>其中指定 cmake 最低版本中填写的版本不得高于当前使用的版本</p><h4 id=src-下的-cmakeliststxt><a href=#src-%e4%b8%8b%e7%9a%84-cmakeliststxt class=header-anchor></a>src 下的 CMakeLists.txt</h4><p>首先先创建一个测试 cpp 文件
+并在 CMakeLists.txt 中添加如下配置</p><pre tabindex=0><code>#设定参与编译的文件集合
+aux_source_directory(${PROJECT_SOURCE_DIR}/src SRC)
+
+#设定可执行文件的输出路径
+set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
+
+#设定头文件路径
+include_directories(${PROJECT_SOURCE_DIR}/include)
+
+
+#设定库路径
+link_directories(${PROJECT_SOURCE_DIR}/lib)
+</code></pre><p>${PROJECT_SOURCE_DIR}
+为项目的根目录
+上方的配置定义了参与编译的文件集合、头文件路径和库路径，并设定的可执行文件输出指根目录下的bin文件夹中(没有构建时会自动创建)</p><h4 id=raylib-相关配置><a href=#raylib-%e7%9b%b8%e5%85%b3%e9%85%8d%e7%bd%ae class=header-anchor></a>raylib 相关配置</h4><p>根据官方项目中 CMakeLists.txt 的示例我做了如下整合与修改</p><pre tabindex=0><code>set(RAYLIB_VERSION 5.5)
+find_package(raylib ${RAYLIB_VERSION} QUIET) 
+if (NOT raylib_FOUND) 
+  include(FetchContent)
+  FetchContent_Declare(
+    raylib
+    DOWNLOAD_EXTRACT_TIMESTAMP OFF
+    URL https://github.com/raysan5/raylib/archive/refs/tags/${RAYLIB_VERSION}.tar.gz
+  )
+  FetchContent_GetProperties(raylib)
+  if (NOT raylib_POPULATED) # Have we downloaded raylib yet?
+    set(FETCHCONTENT_QUIET NO)
+    FetchContent_MakeAvailable(raylib)
+    set(BUILD_EXAMPLES OFF CACHE BOOL &#34;&#34; FORCE) 
+  endif()
+endif()
+
+set(RAYGUI_VERSION 4.0)
+find_package(raygui ${RAYGUI_VERSION} QUIET) # QUIET or REQUIRED
+if (NOT raygui_FOUND) # If there&#39;s none, fetch and build raylib
+  include(FetchContent)
+  FetchContent_Declare(
+    raygui
+    DOWNLOAD_EXTRACT_TIMESTAMP OFF
+    URL https://github.com/raysan5/raygui/archive/refs/heads/master.zip
+  )
+  FetchContent_GetProperties(raygui)
+  if (NOT raygui_POPULATED) # Have we downloaded raylib yet?
+    set(FETCHCONTENT_QUIET NO)
+    FetchContent_MakeAvailable(raygui)
+    set(BUILD_RAYGUI_EXAMPLES OFF CACHE BOOL &#34;&#34; FORCE) 
+    add_subdirectory(${raygui_SOURCE_DIR}/projects/CMake ${raygui_BINARY_DIR})
+  endif()
+endif()
+
+set(RRES_VERSION 1.2.0)
+find_package(rres ${RRES_VERSION} QUIET) # QUIET or REQUIRED
+if (NOT rres_FOUND) # If there&#39;s none, fetch and build raylib
+  include(FetchContent)
+  FetchContent_Declare(
+    rres
+    DOWNLOAD_EXTRACT_TIMESTAMP OFF
+    URL https://github.com/raysan5/rres/archive/refs/heads/master.zip
+  )
+  FetchContent_GetProperties(rres)
+  if (NOT rres_POPULATED) # Have we downloaded raylib yet?
+    set(FETCHCONTENT_QUIET NO)
+    FetchContent_MakeAvailable(rres)
+    set(BUILD_RRES_EXAMPLES OFF CACHE BOOL &#34;&#34; FORCE) # don&#39;t build the supplied examples
+    add_subdirectory(${rres_SOURCE_DIR}/projects/CMake ${rres_BINARY_DIR})
+  endif()
+endif()
+
+option(SUPPORT_FILEFORMAT_WAV &#34;WAV Support&#34; TRUE)
+option(SUPPORT_FILEFORMAT_OGG &#34;OGG Support&#34; TRUE)
+option(SUPPORT_FILEFORMAT_MP3 &#34;MP3 Support&#34; TRUE)
+option(SUPPORT_FILEFORMAT_QOA &#34;QOA Support&#34; TRUE)
+option(SUPPORT_FILEFORMAT_FLAC &#34;FLAC Support&#34; TRUE)
+option(SUPPORT_FILEFORMAT_XM &#34;XM Support&#34; TRUE)
+option(SUPPORT_FILEFORMAT_MOD &#34;MOD Support&#34; TRUE)
+
+file(COPY ${PROJECT_SOURCE_DIR}/include/rres/rres-raylib.h DESTINATION ${rres_SOURCE_DIR}/src)
+
+# Our Project
+add_executable(${PROJECT_NAME} ${SRC})
+#set(raylib_VERBOSE 1)
+target_link_libraries(${PROJECT_NAME} raylib raygui rres)
+
+# Web Configurations
+if (${PLATFORM} STREQUAL &#34;Web&#34;)
+    set_target_properties(${PROJECT_NAME} PROPERTIES SUFFIX &#34;.html&#34;) 
+    set(CMAKE_EXE_LINKER_FLAGS &#34;${CMAKE_EXE_LINKER_FLAGS} -s USE_GLFW=3 -s ASSERTIONS=1 -s WASM=1 -s ASYNCIFY -s GL_ENABLE_GET_PROC_ADDRESS=1&#34;)
+endif()
+
+# Checks if OSX and links appropriate frameworks (Only required on MacOS)
+if (APPLE)
+    target_link_libraries(${PROJECT_NAME} &#34;-framework IOKit&#34;)
+    target_link_libraries(${PROJECT_NAME} &#34;-framework Cocoa&#34;)
+    target_link_libraries(${PROJECT_NAME} &#34;-framework OpenGL&#34;)
+endif()
+</code></pre><p>关键在于 find_package 的部分。如果没有找到对应的包，将会自动代码中配置的包，其中raudio 已经被作者整合到 raylib 中 ，故只需要下载 raylib、raygui和rres即可。</p><h4 id=编写测试代码><a href=#%e7%bc%96%e5%86%99%e6%b5%8b%e8%af%95%e4%bb%a3%e7%a0%81 class=header-anchor></a>编写测试代码</h4><p>注意如果使用的 cpp 代码需要对 rres-raylib.h 头文件做出一定的修改否则编译报错
+修改如下</p><pre tabindex=0><code>//line 567
+crypto_argon2_inputs inputs = {
+.pass = (const uint8_t *)rresGetCipherPassword(), // User password
+.salt = salt, // Salt for the password
+.pass_size = (uint32_t)strlen(rresGetCipherPassword()), // Password length
+.salt_size = 16|
+};
+
+//line 641
+crypto_argon2_inputs inputs = {
+.pass = (const uint8_t *)rresGetCipherPassword(), // User password
+.salt = salt, // Salt for the password
+.pass_size = (uint32_t)strlen(rresGetCipherPassword()), // Password length
+.salt_size = 16|
+};
+
+//line 669
+int decryptResult = crypto_aead_unlock(decryptedData, mac, key, nonce, NULL, 0, (const u8 *)chunk-&gt;data.raw, (chunk-&gt;info.packedSize - 16 - 24 - 16));
+</code></pre><p>可能是源代码是用c编写的作者，我已经在githut提交了pull request。作者已经同意合并，新版本的rres不会在出现此问题</p><h4 id=build><a href=#build class=header-anchor></a>build</h4><p>最后在根目录下创建 build 文件夹，在 build 文件夹下启动命令行 ，按顺序输入如下指令(./ 根据你项目实际路径而定)</p><pre tabindex=0><code>cmake ./
+cmake --build ./
+</code></pre><p>-G"Unix Makefiles" 如果是Windows 操作系统下且需要 makefiles 需要加上该语句。运行中可能会受网络影响导致下载失败多试几次即可。如果一切正常应该可以在根目录下看到 bin 文件夹且里面有一个可执行文件，如果可执行文件可正常运行就大功告成了。</p><h3 id=尾><a href=#%e5%b0%be class=header-anchor></a>尾</h3><p>如果您嫌麻烦可以直接从github 下载我项目 <a class=link href=https://github.com/IyuMashiro/raylib_raygui_rres_template target=_blank rel=noopener>https://github.com/IyuMashiro/raylib_raygui_rres_template</a></p></section><footer class="article-meta article-footer"><section class=article-tags><a href=/tags/cmake/>Cmake</a>
+<a href=/tags/raylib/>Raylib</a></section><section class="article-copyright inline-meta"><svg class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg>
+<span>本文采用 <a class=link href=https://creativecommons.org/licenses/by-nc-sa/4.0/ target=_blank rel=noopener>CC BY-NC-SA 4.0</a> 协议进行许可。</span></section><section class="article-lastmod inline-meta"><svg class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+<span>最后更新于 Sunday, May 3, 2026</span></section></footer></article><section class=article-comments><div class=giscus-container><noscript>Comments require JavaScript to load.</noscript><script src=https://giscus.app/client.js data-repo=IyuOshimu/iyuoshimu.github.io data-repo-id=R_kgDOLrlWlQ data-category=Announcements data-category-id=DIC_kwDOLrlWlc4CejmM data-mapping=pathname data-strict=0 data-reactions-enabled=1 data-emit-metadata=0 data-input-position=top data-theme=light data-lang=zh-CN data-loading=lazy crossorigin=anonymous async></script></div><script>(function(){function e(e){var t=document.querySelector("iframe.giscus-frame");if(!t||!t.contentWindow)return;t.contentWindow.postMessage({giscus:{setConfig:{theme:e}}},"https://giscus.app")}function t(){return document.documentElement.dataset.scheme==="light"?"light":"dark_dimmed"}window.addEventListener("message",function(n){if(n.origin!=="https://giscus.app")return;e(t())}),window.addEventListener("onColorSchemeChange",function(){e(t())})})()</script></section><footer class=site-footer><section class=copyright>&copy;
+2020 -
+2026 iyuOshimu</section><section class=powerby>使用 <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> 构建<br>主题 <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=4.0.0>Stack</a></b> 由 <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a> 设计</section></footer><script type=module>
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script></main></div><script type=text/javascript src=/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js defer></script><script type=text/javascript src=/ts/custom.ad65fc034f3a465e007d20e11b1e135b2797962a0aab0b4640dcd626042f6a91.js defer></script><div class=stack-site-background aria-hidden=true><video class=stack-site-background-video autoplay muted loop playsinline preload=none disablepictureinpicture disableremoteplayback data-landscape-src=/background/kano.mp4 data-portrait-src=/background/kano_portrait%20screen.mp4></video><div class=stack-site-background-overlay></div></div><div class=stack-page-loader aria-hidden=true><div class=stack-page-loader-card><div class=loader></div><p class=stack-page-loader-text>Loading...</p></div></div></body></html>

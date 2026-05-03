@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on 雾锁之森</title><link>https://iyublog.top/post/</link><description>Recent content in Posts on 雾锁之森</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>iyuOshimu</copyright><lastBuildDate>Sun, 03 May 2026 20:40:01 +0000</lastBuildDate><atom:link href="https://iyublog.top/post/index.xml" rel="self" type="application/rss+xml"/><item><title>agf艾雅法拉</title><link>https://iyublog.top/p/cosplay-mie-agf/</link><pubDate>Sun, 03 May 2026 00:00:00 +0000</pubDate><guid>https://iyublog.top/p/cosplay-mie-agf/</guid><description>&lt;img src="https://iyublog.top/" alt="Featured image of post agf艾雅法拉" /&gt;&lt;p&gt;&lt;img alt="agf-1" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="https://iyublog.top/img/agf-2.jpg"&gt;
+&lt;img alt="agf-2" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="https://iyublog.top/img/agf-6.jpg"&gt;
+&lt;img alt="agf-3" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="https://iyublog.top/img/agf-5.jpg"&gt;
+&lt;img alt="agf-4" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="https://iyublog.top/img/agf-8.jpg"&gt;
+&lt;img alt="agf-5" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="https://iyublog.top/img/agf-9.jpg"&gt;
+&lt;img alt="agf-6" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="https://iyublog.top/img/agf-7.jpg"&gt;
+&lt;img alt="agf-7" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="https://iyublog.top/img/agf-8.jpg"&gt;
+&lt;img alt="agf-8" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="https://iyublog.top/img/agf-3.jpg"&gt;
+&lt;img alt="agf-9" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="https://iyublog.top/img/agf-1.jpg"&gt;&lt;/p&gt;</description></item><item><title>鹿乃表情包第一弹-早</title><link>https://iyublog.top/p/kano-emoji-pack-1/</link><pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate><guid>https://iyublog.top/p/kano-emoji-pack-1/</guid><description>&lt;img src="https://iyublog.top/" alt="Featured image of post 鹿乃表情包第一弹-早" /&gt;&lt;p&gt;&lt;img alt="鹿乃表情包第一弹-早" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="https://iyublog.top/img/kano-gif1-goodmoring.gif"&gt;&lt;/p&gt;</description></item><item><title>星叶奏</title><link>https://iyublog.top/p/xingyezou-art/</link><pubDate>Fri, 20 Mar 2026 00:00:00 +0000</pubDate><guid>https://iyublog.top/p/xingyezou-art/</guid><description>&lt;img src="https://iyublog.top/" alt="Featured image of post 星叶奏" /&gt;&lt;p&gt;&lt;img alt="星叶奏" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="https://iyublog.top/img/zo.png"&gt;&lt;/p&gt;</description></item><item><title>使用 cmake 构造 raylib</title><link>https://iyublog.top/p/cmake/</link><pubDate>Tue, 04 Feb 2025 00:00:00 +0000</pubDate><guid>https://iyublog.top/p/cmake/</guid><description>&lt;img src="https://iyublog.top/" alt="Featured image of post 使用 cmake 构造 raylib" /&gt;&lt;h2 id="raylib-概述"&gt;&lt;a href="#raylib-%e6%a6%82%e8%bf%b0" class="header-anchor"&gt;&lt;/a&gt;raylib 概述
+&lt;/h2&gt;&lt;p&gt;raylib 是一个简单易用的库，是我们可以较为简单的享受游戏编程。除此之为 raylib 的作者还提供其他的扩展组件。 &lt;a class="link" href="https://www.raylib.com/" target="_blank" rel="noopener"
+ &gt;https://www.raylib.com/&lt;/a&gt; 是 raylib 的官方网站，可以通过此网站获取更加详细的信息&lt;/p&gt;
+&lt;h2 id="本博客的目的"&gt;&lt;a href="#%e6%9c%ac%e5%8d%9a%e5%ae%a2%e7%9a%84%e7%9b%ae%e7%9a%84" class="header-anchor"&gt;&lt;/a&gt;本博客的目的
+&lt;/h2&gt;&lt;p&gt;作者也是在机缘巧合的情况下了解到该库，经过一番体验下来，便突发奇想能否通过cmake 将raylib 作者提供的模块与 raylib 整合到一起，经过一段时间的研究终于完成简易的整合，该博客将记录整合的过程和遇到的问题&lt;/p&gt;
+&lt;h2 id="开始"&gt;&lt;a href="#%e5%bc%80%e5%a7%8b" class="header-anchor"&gt;&lt;/a&gt;开始
+&lt;/h2&gt;&lt;h3 id="环境准备"&gt;&lt;a href="#%e7%8e%af%e5%a2%83%e5%87%86%e5%a4%87" class="header-anchor"&gt;&lt;/a&gt;环境准备
+&lt;/h3&gt;&lt;p&gt;1.cmake &lt;a class="link" href="https://cmake.org/" target="_blank" rel="noopener"
+ &gt;https://cmake.org/&lt;/a&gt; 下载最新版即可&lt;/p&gt;
+&lt;p&gt;2.mingw &lt;a class="link" href="https://github.com/niXman/mingw-builds-binaries/releases" target="_blank" rel="noopener"
+ &gt;https://github.com/niXman/mingw-builds-binaries/releases&lt;/a&gt; &lt;/br&gt;
+根据自己的操作系统选择对应的版本，当然你也可以选择其他的构建工具 win用户可选 posix-seh-ucrt-rt 的版本，其他版本的区别请自行查询，如果是从其他渠道下载的构建工具请一定要检查 gcc 的版本是否过低，之前作者就因 gcc 过低导致的报错，排了好一会的错误
+windows 下的指令为 gcc -v&lt;/p&gt;
+&lt;p&gt;3.配置环境变量 &lt;/br&gt;
+将 cmake 和 mingw 的 bin 路径配置到系统的环境变量中，配置环境的变量的方法请自行查找&lt;/p&gt;
+&lt;p&gt;4.额外操作 &lt;/br&gt;
+此处建议 windows 用户将 mingw32-make 复制并重命名为 make，如果你的电脑上没有安装过 visual studio 可能会不存在 msvc 等其他编译器导致报错。&lt;/p&gt;
+&lt;h3 id="文件结构"&gt;&lt;a href="#%e6%96%87%e4%bb%b6%e7%bb%93%e6%9e%84" class="header-anchor"&gt;&lt;/a&gt;文件结构
+&lt;/h3&gt;&lt;p&gt;创建一个项目文件夹，在此文件夹中建议为如下的结构&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;asset 资源文件夹&lt;/li&gt;
+&lt;li&gt;build 构建文件夹&lt;/li&gt;
+&lt;li&gt;includ 存放头文件&lt;/li&gt;
+&lt;li&gt;lib 存放第三方库&lt;/li&gt;
+&lt;li&gt;src 存放源文件&lt;/li&gt;
+&lt;li&gt;CMakeLists.txt cmake 文件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="编写-cmakeliststxt"&gt;&lt;a href="#%e7%bc%96%e5%86%99-cmakeliststxt" class="header-anchor"&gt;&lt;/a&gt;编写 CMakeLists.txt
+&lt;/h3&gt;&lt;h4 id="外层-cmakeliststxt"&gt;&lt;a href="#%e5%a4%96%e5%b1%82-cmakeliststxt" class="header-anchor"&gt;&lt;/a&gt;外层 CMakeLists.txt
+&lt;/h4&gt;&lt;p&gt;即文件目录下最外层的 CMakeLists.txt 文件&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;#指定 cmake 最低版本
+cmake_minimum_required(VERSION 3.20)
+
+#指定项目名称
+project(sol)
+#指定C++标准
+set(CMAKE_CXX_STANDARD 20)
+
+# Generate compile_commands.json
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+#添加子目录
+add_subdirectory(&amp;#34;src&amp;#34;)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;其中指定 cmake 最低版本中填写的版本不得高于当前使用的版本&lt;/p&gt;
+&lt;h4 id="src-下的-cmakeliststxt"&gt;&lt;a href="#src-%e4%b8%8b%e7%9a%84-cmakeliststxt" class="header-anchor"&gt;&lt;/a&gt;src 下的 CMakeLists.txt
+&lt;/h4&gt;&lt;p&gt;首先先创建一个测试 cpp 文件
+并在 CMakeLists.txt 中添加如下配置&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;#设定参与编译的文件集合
+aux_source_directory(${PROJECT_SOURCE_DIR}/src SRC)
+
+#设定可执行文件的输出路径
+set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
+
+#设定头文件路径
+include_directories(${PROJECT_SOURCE_DIR}/include)
+
+
+#设定库路径
+link_directories(${PROJECT_SOURCE_DIR}/lib)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;${PROJECT_SOURCE_DIR}
+为项目的根目录
+上方的配置定义了参与编译的文件集合、头文件路径和库路径，并设定的可执行文件输出指根目录下的bin文件夹中(没有构建时会自动创建)&lt;/p&gt;
+&lt;h4 id="raylib-相关配置"&gt;&lt;a href="#raylib-%e7%9b%b8%e5%85%b3%e9%85%8d%e7%bd%ae" class="header-anchor"&gt;&lt;/a&gt;raylib 相关配置
+&lt;/h4&gt;&lt;p&gt;根据官方项目中 CMakeLists.txt 的示例我做了如下整合与修改&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;set(RAYLIB_VERSION 5.5)
+find_package(raylib ${RAYLIB_VERSION} QUIET) 
+if (NOT raylib_FOUND) 
+ include(FetchContent)
+ FetchContent_Declare(
+ raylib
+ DOWNLOAD_EXTRACT_TIMESTAMP OFF
+ URL https://github.com/raysan5/raylib/archive/refs/tags/${RAYLIB_VERSION}.tar.gz
+ )
+ FetchContent_GetProperties(raylib)
+ if (NOT raylib_POPULATED) # Have we downloaded raylib yet?
+ set(FETCHCONTENT_QUIET NO)
+ FetchContent_MakeAvailable(raylib)
+ set(BUILD_EXAMPLES OFF CACHE BOOL &amp;#34;&amp;#34; FORCE) 
+ endif()
+endif()
+
+set(RAYGUI_VERSION 4.0)
+find_package(raygui ${RAYGUI_VERSION} QUIET) # QUIET or REQUIRED
+if (NOT raygui_FOUND) # If there&amp;#39;s none, fetch and build raylib
+ include(FetchContent)
+ FetchContent_Declare(
+ raygui
+ DOWNLOAD_EXTRACT_TIMESTAMP OFF
+ URL https://github.com/raysan5/raygui/archive/refs/heads/master.zip
+ )
+ FetchContent_GetProperties(raygui)
+ if (NOT raygui_POPULATED) # Have we downloaded raylib yet?
+ set(FETCHCONTENT_QUIET NO)
+ FetchContent_MakeAvailable(raygui)
+ set(BUILD_RAYGUI_EXAMPLES OFF CACHE BOOL &amp;#34;&amp;#34; FORCE) 
+ add_subdirectory(${raygui_SOURCE_DIR}/projects/CMake ${raygui_BINARY_DIR})
+ endif()
+endif()
+
+set(RRES_VERSION 1.2.0)
+find_package(rres ${RRES_VERSION} QUIET) # QUIET or REQUIRED
+if (NOT rres_FOUND) # If there&amp;#39;s none, fetch and build raylib
+ include(FetchContent)
+ FetchContent_Declare(
+ rres
+ DOWNLOAD_EXTRACT_TIMESTAMP OFF
+ URL https://github.com/raysan5/rres/archive/refs/heads/master.zip
+ )
+ FetchContent_GetProperties(rres)
+ if (NOT rres_POPULATED) # Have we downloaded raylib yet?
+ set(FETCHCONTENT_QUIET NO)
+ FetchContent_MakeAvailable(rres)
+ set(BUILD_RRES_EXAMPLES OFF CACHE BOOL &amp;#34;&amp;#34; FORCE) # don&amp;#39;t build the supplied examples
+ add_subdirectory(${rres_SOURCE_DIR}/projects/CMake ${rres_BINARY_DIR})
+ endif()
+endif()
+
+option(SUPPORT_FILEFORMAT_WAV &amp;#34;WAV Support&amp;#34; TRUE)
+option(SUPPORT_FILEFORMAT_OGG &amp;#34;OGG Support&amp;#34; TRUE)
+option(SUPPORT_FILEFORMAT_MP3 &amp;#34;MP3 Support&amp;#34; TRUE)
+option(SUPPORT_FILEFORMAT_QOA &amp;#34;QOA Support&amp;#34; TRUE)
+option(SUPPORT_FILEFORMAT_FLAC &amp;#34;FLAC Support&amp;#34; TRUE)
+option(SUPPORT_FILEFORMAT_XM &amp;#34;XM Support&amp;#34; TRUE)
+option(SUPPORT_FILEFORMAT_MOD &amp;#34;MOD Support&amp;#34; TRUE)
+
+file(COPY ${PROJECT_SOURCE_DIR}/include/rres/rres-raylib.h DESTINATION ${rres_SOURCE_DIR}/src)
+
+# Our Project
+add_executable(${PROJECT_NAME} ${SRC})
+#set(raylib_VERBOSE 1)
+target_link_libraries(${PROJECT_NAME} raylib raygui rres)
+
+# Web Configurations
+if (${PLATFORM} STREQUAL &amp;#34;Web&amp;#34;)
+ set_target_properties(${PROJECT_NAME} PROPERTIES SUFFIX &amp;#34;.html&amp;#34;) 
+ set(CMAKE_EXE_LINKER_FLAGS &amp;#34;${CMAKE_EXE_LINKER_FLAGS} -s USE_GLFW=3 -s ASSERTIONS=1 -s WASM=1 -s ASYNCIFY -s GL_ENABLE_GET_PROC_ADDRESS=1&amp;#34;)
+endif()
+
+# Checks if OSX and links appropriate frameworks (Only required on MacOS)
+if (APPLE)
+ target_link_libraries(${PROJECT_NAME} &amp;#34;-framework IOKit&amp;#34;)
+ target_link_libraries(${PROJECT_NAME} &amp;#34;-framework Cocoa&amp;#34;)
+ target_link_libraries(${PROJECT_NAME} &amp;#34;-framework OpenGL&amp;#34;)
+endif()
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;关键在于 find_package 的部分。如果没有找到对应的包，将会自动代码中配置的包，其中raudio 已经被作者整合到 raylib 中 ，故只需要下载 raylib、raygui和rres即可。&lt;/p&gt;
+&lt;h4 id="编写测试代码"&gt;&lt;a href="#%e7%bc%96%e5%86%99%e6%b5%8b%e8%af%95%e4%bb%a3%e7%a0%81" class="header-anchor"&gt;&lt;/a&gt;编写测试代码
+&lt;/h4&gt;&lt;p&gt;注意如果使用的 cpp 代码需要对 rres-raylib.h 头文件做出一定的修改否则编译报错
+修改如下&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;//line 567
+crypto_argon2_inputs inputs = {
+.pass = (const uint8_t *)rresGetCipherPassword(), // User password
+.salt = salt, // Salt for the password
+.pass_size = (uint32_t)strlen(rresGetCipherPassword()), // Password length
+.salt_size = 16|
+};
+
+//line 641
+crypto_argon2_inputs inputs = {
+.pass = (const uint8_t *)rresGetCipherPassword(), // User password
+.salt = salt, // Salt for the password
+.pass_size = (uint32_t)strlen(rresGetCipherPassword()), // Password length
+.salt_size = 16|
+};
+
+//line 669
+int decryptResult = crypto_aead_unlock(decryptedData, mac, key, nonce, NULL, 0, (const u8 *)chunk-&amp;gt;data.raw, (chunk-&amp;gt;info.packedSize - 16 - 24 - 16));
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;可能是源代码是用c编写的作者，我已经在githut提交了pull request。作者已经同意合并，新版本的rres不会在出现此问题&lt;/p&gt;
+&lt;h4 id="build"&gt;&lt;a href="#build" class="header-anchor"&gt;&lt;/a&gt;build
+&lt;/h4&gt;&lt;p&gt;最后在根目录下创建 build 文件夹，在 build 文件夹下启动命令行 ，按顺序输入如下指令(./ 根据你项目实际路径而定)&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;cmake ./
+cmake --build ./
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;-G&amp;quot;Unix Makefiles&amp;quot; 如果是Windows 操作系统下且需要 makefiles 需要加上该语句。运行中可能会受网络影响导致下载失败多试几次即可。如果一切正常应该可以在根目录下看到 bin 文件夹且里面有一个可执行文件，如果可执行文件可正常运行就大功告成了。&lt;/p&gt;
+&lt;h3 id="尾"&gt;&lt;a href="#%e5%b0%be" class="header-anchor"&gt;&lt;/a&gt;尾
+&lt;/h3&gt;&lt;p&gt;如果您嫌麻烦可以直接从github 下载我项目 &lt;a class="link" href="https://github.com/IyuMashiro/raylib_raygui_rres_template" target="_blank" rel="noopener"
+ &gt;https://github.com/IyuMashiro/raylib_raygui_rres_template&lt;/a&gt;&lt;/p&gt;</description></item></channel></rss>
